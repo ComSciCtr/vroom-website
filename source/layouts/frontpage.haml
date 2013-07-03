@@ -4,4 +4,32 @@
       .hero-unit
         %h1= data.site.title
         %h2= data.site.subtitle
+
+        %a.btn.btn-large.btn-info{:href=>"/download.html"} get started
+
+        %ul.inline
+          %li= link_to "tutorials", "#"
+          %li= link_to "api reference", "#"
+          %li= link_to "source code", "#"
+
+  .row-fluid
+    .span6.offset3
+      :markdown
+        **vroom** is designed to make immersive 3D visualization easier by
+        reducing the amount of time (and effort) required to develop VR
+        applications.  **vroom** is built using the [Vrui](#) library and
+        python. It is being developed at the *University of California, Davis*.
+
+  .row-fluid
+    .span3.offset2
+      %h3 simple syntax
+      %p= lorem.paragraph
+
+    .span3
+      %h3 live coding
+      %p= lorem.paragraph
+
+    .span3
+      %h3 high level
+      %p= lorem.paragraph
     
