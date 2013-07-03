@@ -1,5 +1,5 @@
 ---
-layout: layout
-title: welcome to middleman
+layout: frontpage
+
 ---
 
