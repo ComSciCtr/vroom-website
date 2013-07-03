@@ -1,0 +1,31 @@
+!!! 5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %title= data.page.title
+
+    = stylesheet_link_tag "vendor/bootstrap/bootstrap.min.css"
+    = stylesheet_link_tag "vendor/bootstrap/bootstrap-responsive.min.css"
+
+    = stylesheet_link_tag "site"
+
+    = javascript_include_tag "holder"
+
+    = yield_content :additional_css_includes
+    = yield_content :additional_js_includes
+
+  %body
+    %header 
+      = partial "partials/navbar"
+
+    #main
+      = yield
+      .push
+
+    %footer
+      = partial "partials/footer"
+
+    = javascript_include_tag "jquery.js"
+    = javascript_include_tag "bootstrap/bootstrap.min.js"
+
+    = yield_content :post_scripts
