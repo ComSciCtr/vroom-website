@@ -33,3 +33,69 @@
       %h3 high level
       %p= lorem.paragraph
     
+
+  .row-fluid
+    .span10.offset1
+      .media
+        %a.pull-right
+          %img.media-object{:src=>"holder.js/600x400/social"}
+        .media-body
+          %h4 user-interaction
+
+          :markdown
+            ~~~ python
+            from vroom import *
+
+            def init():
+              Global.points = []
+
+            def draw():
+              lighting(False)
+              color(green)
+              draw(sphere, 3.0).for_each(Global.points)
+
+            def buton_press(pos, button):
+              Global.points.append(pos)
+            ~~~
+    
+  .row-fluid
+    .span10.offset1
+      .media
+        %a.pull-right
+          %img.media-object{:src=>"holder.js/600x400/social"}
+        .media-body
+          %h4 texture-mapping
+
+          :markdown
+            ~~~ python
+            from vroom import *
+
+            def init():
+              Global.texture = Texture.from_file('crate.png')
+
+            def draw():
+              material(white)
+              cube(3.0, texture=Global.texture)
+            ~~~
+
+  .row-fluid
+    .span10.offset1
+      .media
+        %a.pull-right
+          %img.media-object{:src=>"holder.js/600x400/social"}
+        .media-body
+          %h4 animation
+
+          :markdown
+            ~~~ python
+            from vroom import *
+
+            def init():
+              Global.radius = 1.0
+
+            def frame():
+              Global.radius = fabs(sin(elapsedTime()))
+
+            def draw():
+              sphere(Global.radius)
+            ~~~
