@@ -3,9 +3,6 @@
     %a.brand{:href => "/"} 
       %i.icon-home
     %ul.nav
-      %li= link_to "download", "/download.html"
-      %li= link_to "documentation" ,"/documentation.html"
-      %li= link_to "about", "/about.html"
-      %li= link_to "demos", "/demos.html"
-
+      - data.navbar.links.each do |link|
+        %li= link_to link.text, link.href
 

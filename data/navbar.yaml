@@ -1,0 +1,13 @@
+links:
+   - text: "download"
+     href: "/download.html"
+        
+   - text: "documentation" 
+     href: "/documentation.html"
+        
+   - text: "about"
+     href: "/about.html"
+        
+   - text: "demos"
+     href: "/demos.html"
+        
