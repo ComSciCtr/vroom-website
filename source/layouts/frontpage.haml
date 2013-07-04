@@ -1,3 +1,20 @@
+-content_for :post_scripts do
+  :javascript
+    function next_example() {
+      current = $('#examples .active');
+      next = current.next('.example');
+      if (!next.find('.media-heading').length) {
+        next = $('#examples .example').first();
+      }
+      next.addClass('active').fadeToggle();
+      current.toggle().removeClass('active');
+    }
+
+    $('document').ready(function() {
+      setInterval(next_example, 10000);
+    }); 
+
+
 - wrap_layout :layout do
   .row-fluid
     .span12
@@ -33,5 +50,5 @@
       %h3 high level
       %p= lorem.paragraph
     
-
-  = partial "partials/frontpage_examples"
+  #examples
+    = partial "partials/frontpage_examples"

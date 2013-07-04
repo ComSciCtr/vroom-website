@@ -1,10 +1,10 @@
-.row-fluid
+.row-fluid.example.active
   .span10.offset1
     .media
       %a.pull-right
         %img.media-object{:src=>"holder.js/600x400/social"}
       .media-body
-        %h4 user-interaction
+        %h4.media-heading user-interaction
 
         :markdown
           ~~~ python
@@ -22,13 +22,13 @@
             Global.points.append(pos)
           ~~~
   
-.row-fluid
+.row-fluid.example.hide
   .span10.offset1
     .media
       %a.pull-right
         %img.media-object{:src=>"holder.js/600x400/social"}
       .media-body
-        %h4 texture-mapping
+        %h4.media-heading texture-mapping
 
         :markdown
           ~~~ python
@@ -42,13 +42,13 @@
             cube(3.0, texture=Global.texture)
           ~~~
 
-.row-fluid
+.row-fluid.example.hide
   .span10.offset1
     .media
       %a.pull-right
         %img.media-object{:src=>"holder.js/600x400/social"}
       .media-body
-        %h4 animation
+        %h4.media-heading animation
 
         :markdown
           ~~~ python
