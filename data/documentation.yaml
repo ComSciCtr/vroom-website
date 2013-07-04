@@ -1,0 +1,26 @@
+modules:
+   - name: "core"
+     docs:
+        - "color.html"
+        - "material.html"
+        - "lighting.html"
+        - "transparency.html"
+        - "translate.html"
+        - "rotate.html"
+        - "scale.html"
+        - "add-main-menu-item.html"
+        - "set-main-menu-title.html"
+        
+   - name: "rendering"
+     docs:
+        - "cube.html"
+        - "sphere.html"
+        - "cylinder.html"
+        - "grid.html"
+        - "point_cloud.html"
+        - "texture.html"
+   - name: "utils"
+     docs:
+        - "get-resource.html"
+        - "generators.html"
+

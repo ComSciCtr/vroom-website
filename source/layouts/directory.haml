@@ -1,16 +1,16 @@
 - wrap_layout :default do
-  
+
   %ul.unstyled
-    - current_page.children.each do |page|
+    - data.documentation.modules.each do |dir|
       %li
-        %h3= File.basename(page.url)
+        %h3= dir.name
         %ul.unstyled
-          - page.children.each do |sub|
+          - dir.docs.each do |doc|
+            - path = "/documentation/#{dir.name}/#{doc}"
+            - page = sitemap.find_resource_by_path(path)
             %li
               %h4
                 %i.icon-double-angle-right
-                = link_to sub.data.title, sub.url
-            
-
+                  = link_to page.data.title, page.url
 
   = yield
