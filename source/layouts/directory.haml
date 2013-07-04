@@ -1,0 +1,17 @@
+- wrap_layout :default do
+  
+  %ul.unstyled
+    - current_page.children.each do |page|
+      %li
+        %h3= File.basename(page.url)
+        %ul.unstyled
+          - page.children.each do |sub|
+            - title = File.basename(sub.url, ".*")
+            %li
+              %h4
+                %i.icon-double-angle-right
+                = link_to title, sub.url
+            
+
+
+  = yield
