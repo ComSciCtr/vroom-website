@@ -3,6 +3,7 @@ layout: documentation
 title:  sphere
 module: rendering
 source: sphere.py
+tags  : [ geometry ]
 related:
    - [ sphereDetail, rendering/sphere-detail.html ]
    - [ cube, rendering/cube.html ]

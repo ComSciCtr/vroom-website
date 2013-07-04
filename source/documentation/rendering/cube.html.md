@@ -6,6 +6,7 @@ source: cube.py
 tags:   [ geometry ]
 related:
    - [ sphere, rendering/sphere.html ]
+   - [ cylinder, rendering/cylinder.html ]
 ---
 
 Render a cube.
