@@ -3,7 +3,7 @@
     function next_example() {
       current = $('#examples .active');
       next = current.next('.example');
-      if (!next.find('.media-heading').length) {
+      if (!next.length) {
         next = $('#examples .example').first();
       }
       next.addClass('active').fadeToggle();
