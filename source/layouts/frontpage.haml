@@ -14,6 +14,7 @@
       setInterval(next_example, 10000);
     }); 
 
+    $('#brief p').addClass('lead');
 
 - wrap_layout :layout do
   .row-fluid
@@ -29,7 +30,7 @@
           %li= link_to "api reference", "#"
           %li= link_to "source code", "#"
 
-  .row-fluid
+  .row-fluid#brief
     .span6.offset3
       :markdown
         **vroom** is designed to make immersive 3D visualization easier by
