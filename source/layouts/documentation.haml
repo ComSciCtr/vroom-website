@@ -58,7 +58,8 @@
     %h4 tags
     %ul.inline
       - current_page.data.tags.each do |tag|
-        %li.label.label-info= tag
+        %li
+          = link_to tag, "/documentation/tags/#{tag}.html", :class=>"label label-info"
 
   = yield
 
