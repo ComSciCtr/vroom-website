@@ -1,0 +1,27 @@
+- content_for :additional_header do
+  %h3
+    - github_src = "https://github.com/jvan/vroom/blob/master/vroom/#{data.page.module}/#{data.page.source}"
+    %a{:href=>github_src, :data=>{"toggle" => "tooltip", "placement"=>"right"}, :title=>"view source on github"}
+      %i.icon-github 
+      #{data.page.module}/#{data.page.source}
+
+- content_for :post_scripts do
+  :javascript
+    $('[data-toggle="tooltip"]').tooltip();
+
+- wrap_layout :default do
+  
+  - if current_page.data.tags
+    %h4 tags
+    %ul.inline
+      - current_page.data.tags.each do |tag|
+        %li.label.label-info= tag
+
+  = yield
+
+  - if current_page.data.related
+    %h4.related see also
+    %ul.inline
+      - current_page.data.related.each do |title, url|
+        %li= link_to title, "/documentation/#{url}"
+   

@@ -3,6 +3,7 @@
     .span12
       .hero-unit
         %h1= data.page.title
+        = yield_content :additional_header
 
   .row-fluid
     .span7.offset2
