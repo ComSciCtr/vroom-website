@@ -16,6 +16,27 @@ set :images_dir, 'assets/img'
 #set :layouts_dir,  '../layouts'
 #set :partials_dir, '../partials'
 
+ready do
+   taglist = Hash.new
+
+   sitemap.resources.each do |page|
+      next if not page.data.include? "tags"
+
+      page.data["tags"].each do |tag|
+         if not taglist.has_key? tag
+            taglist[tag] = []
+         end
+         taglist[tag] << page
+      end
+   end
+
+   taglist.each do |tag, pages|
+      proxy "/documentation/tags/#{tag}.html", "/documentation/tags/template.html",
+            :locals => {:tag => tag, :pages => pages},
+            :ignore => true
+   end
+end
+
 # Build-specific configuration
 configure :build do
   # Change the Compass output style for deployment

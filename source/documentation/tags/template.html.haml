@@ -1,0 +1,13 @@
+---
+layout: default
+
+---
+
+%h1= tag
+
+%ul.unstyled
+  - pages.each do |page|
+    %li
+      %h4
+        %a{:href=>page.url}= page.data.title
+
