@@ -1,0 +1,9 @@
+- wrap_layout :layout do
+  .row-fluid
+    .span12
+      .hero-unit
+        %h1= data.page.title
+
+  .row-fluid
+    .span7.offset2
+      = yield
