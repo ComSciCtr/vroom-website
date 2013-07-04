@@ -6,11 +6,10 @@
         %h3= File.basename(page.url)
         %ul.unstyled
           - page.children.each do |sub|
-            - title = File.basename(sub.url, ".*")
             %li
               %h4
                 %i.icon-double-angle-right
-                = link_to title, sub.url
+                = link_to sub.data.title, sub.url
             
 
 
