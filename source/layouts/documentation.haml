@@ -21,7 +21,7 @@
     // Add empty list element for to store tab toggle links
     $('h3:last').after('<ul class="nav nav-pills nav-stacked" id="nav-tab"/>');
 
-    $('h3:last ~ h4').not('.related').each(function() {
+    $('h3:last ~ h4').not('#related').each(function() {
       var tab_id = $(this).attr("id");
 
       // add a link to toggle the section content
@@ -55,7 +55,7 @@
 - wrap_layout :default do
   
   - if current_page.data.tags
-    %h4 tags
+    %h4.inline tags
     %ul.inline
       - current_page.data.tags.each do |tag|
         %li
@@ -64,7 +64,7 @@
   = yield
 
   - if current_page.data.related
-    %h4.related see also
+    %h4.inline.label.label-info#related see also:
     %ul.inline
       - current_page.data.related.each do |title, url|
         %li= link_to title, "/documentation/#{url}"
