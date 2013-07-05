@@ -1,14 +1,23 @@
+$footer-border-color:     darken($footer-background-color, 10%)
+$footer-font-color:       darken($footer-background-color, 20%)
+$footer-link-color:       darken($footer-background-color, 40%)
+$footer-link-hover-color: darken($footer-background-color, 70%)
+
 footer
-  border: 1px solid darken($footer-background-color, 10%)
   margin-top: 40px
   padding: 40px 0 20px 0
 
+  border: 1px solid $footer-border-color
   background: $footer-background-color
-  color: darken($footer-background-color, 20%)
+  color: $footer-font-color
 
   font-size: $footer-font-size
 
   a
-    color: darken($footer-background-color, 40%)
+    color: $footer-link-color
     &:hover
-      color: darken($footer-background-color, 70%)
+      color: $footer-link-hover-color
+
+  i
+    color: $footer-link-hover-color
+      
