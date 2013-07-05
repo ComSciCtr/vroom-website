@@ -19,11 +19,12 @@
 - wrap_layout :layout do
   .row-fluid
     .span12
-      .hero-unit
+      .hero-unit#frontpage-hero
         %h1= data.site.title
         %h2= data.site.subtitle
 
-        %a.btn.btn-large.btn-info{:href=>"/download.html"} get started
+        %p
+          %a.btn.btn-large.btn-info{:href=>"/download.html"} get started
 
         %ul.inline
           %li= link_to "tutorials", "#"
