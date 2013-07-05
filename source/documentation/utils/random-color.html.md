@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title:  random\_color
+title:  random_color
 module: utils
 source: generators.py
 tags: [ utils, random ]
