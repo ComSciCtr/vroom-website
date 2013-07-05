@@ -55,11 +55,11 @@
 - wrap_layout :default do
   
   - if current_page.data.tags
-    %h4.inline tags
+    %h4.inline.label.label-info tags:
     %ul.inline
       - current_page.data.tags.each do |tag|
         %li
-          = link_to tag, "/documentation/tags/#{tag}.html", :class=>"label label-info"
+          = link_to tag, "/documentation/tags/#{tag}.html"
 
   = yield
 
