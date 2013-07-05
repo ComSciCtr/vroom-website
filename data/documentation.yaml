@@ -22,5 +22,8 @@ modules:
    - name: "utils"
      docs:
         - "get-resource.html"
-        - "generators.html"
+        - "random-vertex.html"
+        - "random-vertex-generator.html"
+        - "random-color.html"
+        - "random-color-generator.html"
 
