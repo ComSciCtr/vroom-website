@@ -1,10 +1,10 @@
 - wrap_layout :default do
 
-  %ul.unstyled
+  %ul.doclist-outer.unstyled
     - data.documentation.modules.each do |dir|
       %li
-        %h3= dir.name
-        %ul.unstyled
+        %h3.muted= dir.name
+        %ul.doclist-inner.unstyled
           - dir.docs.each do |doc|
             - path = "/documentation/#{dir.name}/#{doc}"
             - page = sitemap.find_resource_by_path(path)
