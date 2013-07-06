@@ -3,7 +3,7 @@ layout: documentation
 title:  random_color
 module: utils
 source: generators.py
-tags: [ utils, random ]
+tags:   [ utils, random, color ]
 related:
    - [ random_color_generator, utils/random-color-generator.html ]
 ---
@@ -53,6 +53,5 @@ def button_press(pos, button):
    Global.points.append(pos)
    Global.colors.append(random_color()
 ~~~
-
 
 
