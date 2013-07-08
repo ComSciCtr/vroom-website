@@ -30,10 +30,12 @@ texture  | [Texture](#) object(s)
 
 #### draw a wireframe sphere
 
-<%= vroom_example_image "cube", "draw-a-wireframe-sphere.png" %>
+
+<%= vroom_example_image "rendering", "sphere", "draw-a-wireframe-sphere.png" %>
+
 
 ~~~ python
-def draw():
+def display():
    lighting(False)
    color(1.0, 1.0, 1.0)
    sphere(3.0)
@@ -41,8 +43,12 @@ def draw():
 
 #### draw a solid sphere
 
+
+<%= vroom_example_image "rendering", "sphere", "draw-a-solid-sphere.png" %>
+
+
 ~~~ python
-def draw():
+def display():
    lighting(True)
    material(1.0, 1.0, 1.0)
    sphere(3.0, style='solid')
