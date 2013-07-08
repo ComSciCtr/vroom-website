@@ -24,34 +24,36 @@ random_color()
 
 #### draw a random colored cube
 
-![](holder.js/400x225/social)
+
+<%= vroom_example_image "utils", "random-color", "draw-a-random-colored-cube.png" %>
+
 
 ~~~ python
-def draw():
+def display():
+   lighting(False)
    color(random_color())
    cube(3.0)
 ~~~
 
 #### assign random colors to new objects
 
-![](holder.js/400x225/social)
+
+<%= vroom_example_image "utils", "random-color", "assign-random-colors-to-new-objects.png" %>
+
 
 ~~~ python
 def init():
-   Global.points = [] 
-   Global.colors = [] 
+   Global.points = [random_vertex(-5, 5) for _ in range(10)] 
+   Global.colors = [random_color() for _ in range(10)]
 
-def draw():
-   for (color, point) in zip(Global.colors, Global.points):
-      color(color)
+def display():
+   lighting(False)
+   for (col, point) in zip(Global.colors, Global.points):
+      color(col)
       pushMatrix()
       translate(point)
-      sphere(3.0)
+      sphere(0.5)
       popMatrix()
-
-def button_press(pos, button):
-   Global.points.append(pos)
-   Global.colors.append(random_color()
 ~~~
 
 
