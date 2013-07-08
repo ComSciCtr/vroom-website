@@ -1,0 +1,62 @@
+---
+layout: documentation
+title:  random_vertex_generator
+module: utils
+source: generators.py
+
+---
+
+Random vertex generator.
+
+### syntax
+
+~~~ python
+random_vertex_generator(n, start=-1.0, stop=1.0):
+~~~
+
+### parameters
+
+n     | number of vertices
+
+### optional arguments
+
+start | minimum for vertex data
+stop  | maximum for vertex data
+
+### return
+
+Generator object for vertices.
+
+### examples
+
+#### random points
+
+
+<%= vroom_example_image "utils", "random-color-generator", "random-points.png" %>
+
+
+~~~ python
+def init():
+   vertices = list(random_vertex_generator(1000))
+   Global.points = PointCloud(vertices)
+
+def display():
+   lighting(False)
+   scale(3.0)
+   Global.points.draw()
+~~~
+
+#### random cubes
+
+
+<%= vroom_example_image "utils", "random-color-generator", "random-cubes.png" %>
+
+
+~~~ python
+def init():
+   Global.vertices = list(random_vertex_generator(50, -5, 5))
+
+def display():
+   lighting(False)
+   draw(sphere, 0.5).for_each(Global.vertices)
+~~~
