@@ -23,10 +23,18 @@ enable | `True` or `False`
 
 #### draw a transparent sphere
 
+
+<%= vroom_example_image "core", "transparency", "draw-a-transparent-sphere.png" %>
+
+
 ~~~ python
-def draw():
+def display():
    lighting(False)
+
+   color(0.0, 1.0, 0.0)
+   sphere(5.0)
+
    transparency(True)
    color(0.0, 1.0, 0.0, 0.3)
-   sphere(3.0)
+   sphere(5.0, style="solid")
 ~~~
