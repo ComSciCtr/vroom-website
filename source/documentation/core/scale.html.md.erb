@@ -29,34 +29,68 @@ size | amount to scale in all directions
 
 #### cube scaled in x-direction
 
+
+<%= vroom_example_image "core", "scale", "cube-scaled-in-x-direction.png" %>
+
+
 ~~~ python
-def draw():
+def display():
+   lighting(False)
+
+   cube(1.0)
+   
    scale(3.0, 1.0, 1.0)
+   color(green)
    cube(1.0)
 ~~~
 
 #### cube scaled in y-direction
 
+
+<%= vroom_example_image "core", "scale", "cube-scaled-in-y-direction.png" %>
+
+
 ~~~ python
-def draw():
+def display():
+   lighting(False)
+
+   cube(1.0)
+
    scale(1.0, 3.0, 1.0)
+   color(green)
    cube(1.0)
 ~~~
 
-#### cube scaled in x-direction
+#### cube scaled in z-direction
+
+
+<%= vroom_example_image "core", "scale", "cube-scaled-in-z-direction.png" %>
+
 
 ~~~ python
-def draw():
+def display():
+   lighting(False)
+
+   cube(1.0)
+
    scale(1.0, 1.0, 3.0)
+   color(green)
    cube(1.0)
 ~~~
 
 #### cube scaled in all directions
+
+
+<%= vroom_example_image "core", "scale", "cube-scaled-in-all-directions.png" %>
+
+
 ~~~ python
-def draw():
-   # unscaled cube drawn for comparison
+def display():
+   lighting(False)
+
    cube(1.0)
 
    scale(3.0)
+   color(green)
    cube(1.0)
 ~~~
