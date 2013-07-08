@@ -34,37 +34,43 @@ texture  | [Texture](/documentation/rendering/texture.html) object(s)
 
 #### draw a wireframe cube
 
-![](holder.js/400x225/social)
+
+<%= vroom_example_image "rendering", "cube", "draw-a-wireframe-cube.png" %>
+
 
 ~~~ python
-def draw():
+def display():
    lighting(False)
    color(1.0, 1.0, 1.0)
-   cube(3.0)
+   cube(4.0)
 ~~~
 
 
 #### draw a solid cube
 
-![](holder.js/400x225/social)
+
+<%= vroom_example_image "rendering", "cube", "draw-a-solid-cube.png" %>
+
 
 ~~~ python
-def draw():
+def display():
    lighting(True)
    material(1.0, 1.0, 1.0)
-   cube(3.0, style='solid')
+   cube(4.0, style='solid')
 ~~~
 
 
 #### draw a texture-mapped cube
 
-![](holder.js/400x225/social)
+
+<%= vroom_example_image "rendering", "cube", "draw-a-texture-mapped-cube.png" %>
+
 
 ~~~ python
-def init():
-   Global.texture = Texture.from_file("crate.png")
+def gl_init():
+   Global.texture = Texture.from_file("data/crate.png")
 
-def draw():
-    cube(3.0, texture=Global.texture)
+def display():
+    cube(4.0, texture=Global.texture)
 ~~~
 
