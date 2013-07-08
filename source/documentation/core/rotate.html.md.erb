@@ -31,22 +31,52 @@ axis  | axis of rotation
 ### examples
 
 #### cylinder rotated 90 degrees about the x-axis
+
+
+<%= vroom_example_image "core", "rotate", "cylinder-rotated-90-degrees-about-the-x-axis.png" %>
+
+
 ~~~ python
-def draw():
+def display():
+   lighting(False)
+
+   cylinder(1.5, 6.0)
+
    rotateX(90)
-   cylinder(3.0, 6.0)
+   color(green)
+   cylinder(1.5, 6.0)
 ~~~
 
 #### cylinder rotated 90 degrees about the y-axis
+
+
+<%= vroom_example_image "core", "rotate", "cylinder-rotated-90-degrees-about-the-y-axis.png" %>
+
+
 ~~~ python
-def draw():
+def display():
+   lighting(False)
+
+   cylinder(1.5, 6.0)
+
    rotateY(90)
-   cylinder(3.0, 6.0)
+   color(green)
+   cylinder(1.5, 6.0)
 ~~~
 
 #### cylinder rotated 90 degrees about the z-axis
+
+
+<%= vroom_example_image "core", "rotate", "cylinder-rotated-90-degrees-about-the-z-axis.png" %>
+
+
 ~~~ python
-def draw():
+def display():
+   lighting(False)
+
+   cylinder(1.5, 6.0)
+
    rotateZ(90)
-   cylinder(3.0, 6.0)
+   color(green)
+   cylinder(1.5, 6.0)
 ~~~
