@@ -22,19 +22,28 @@ enable | `True` or `False`
 
 ### examples
 
-#### draw a solid cube 
+#### draw a solid sphere 
+
+
+<%= vroom_example_image "core", "lighting", "draw-a-solid-sphere.png" %>
+
 
 ~~~ python
-def draw():
+def display():
    lighting(True)
    material(1.0, 1.0, 1.0)
-   cube(3.0)
+   sphere(3.0, style="solid")
 ~~~
 
-#### draw a wireframe cube
+#### draw a wireframe sphere
+
+
+<%= vroom_example_image "core", "lighting", "draw-a-wireframe-sphere.png" %>
+
+
 ~~~ python
-def draw():
+def display():
    lighting(False)
    color(1.0, 1.0, 1.0)
-   cube(3.0)
+   sphere(3.0)
 ~~~
