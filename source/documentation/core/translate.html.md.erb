@@ -31,23 +31,56 @@ dir  | direction of translation
 ### examples
 
 #### cube translated along the x-axis
+
+
+<%= vroom_example_image "core", "translate", "cube-translated-along-the-x-axis.png" %>
+
+
 ~~~ python
-def draw():
-   tronslateX(3.0)
+def display():
+   lighting(False)
+
+   color(white)
+   cube(3.0)
+   
+   translateX(4.0)
+   color(green)
    cube(3.0)
 ~~~
 
 #### cube translated along the y-axis
+
+
+<%= vroom_example_image "core", "translate", "cube-translated-along-the-y-axis.png" %>
+
+
 ~~~ python
-def draw():
-   tronslateY(3.0)
+def display():
+   lighting(False)
+   
+   color(white)
+   cube(3.0)
+
+   translateY(4.0)
+   color(green)
    cube(3.0)
 ~~~
 
 #### cube translated along the z-axis
+
+
+<%= vroom_example_image "core", "translate", "cube-translated-along-the-z-axis.png" %>
+
+
+
 ~~~ python
-def draw():
-   tronslateZ(3.0)
+def display():
+   lighting(False)
+   color(white)
+   cube(3.0)
+
+   translateZ(4.0)
+   color(green)
    cube(3.0)
 ~~~
 
@@ -57,12 +90,17 @@ def draw():
 The following code can be simplified by using [batch\_mode](/documentation/utils/batch-mode.html)
 rendering. This example is for illustration purposes only.
 
+
+<%= vroom_example_image "core", "translate", "drawing-multiple-cubes-at-random-positions.png" %>
+
+
 ~~~ python
 def init():
-   num_cubes = 100
-   Global.positions = random_vertex_generator(num_cubes, -100.0, 100.0)
+   num_cubes = 20
+   Global.positions = list(random_vertex_generator(num_cubes, -10.0, 10.0))
 
-def draw():
+def display():
+   lighting(False)
    for pos in Global.positions:
       pushMatrix()
       translate(pos)
