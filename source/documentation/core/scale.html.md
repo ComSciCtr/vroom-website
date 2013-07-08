@@ -51,7 +51,7 @@ def draw():
    cube(1.0)
 ~~~
 
-### cube scaled in all directions
+#### cube scaled in all directions
 ~~~ python
 def draw():
    # unscaled cube drawn for comparison
