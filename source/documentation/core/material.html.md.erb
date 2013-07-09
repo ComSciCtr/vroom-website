@@ -32,27 +32,73 @@ a    | alpha (transparency) value
 
 ### examples
 
-#### draw a solid white cube
+#### set material using grey-scale value
+
+
+<%= vroom_example_image "core", "material", "set-material-using-grey-scale-value.png" %>
+
 
 ~~~ python
-   # using grey-scale value
-   material(1.0)
-   cube(3.0)
+def display():
+   translateX(-5)
+   material(0.1)
+   sphere(2.0, style="solid")
 
-   # using rgb value
-   material(1.0, 1.0, 1.0)
-   cube(3.0)
+   translateX(5)
+   material(0.5)
+   sphere(2.0, style="solid")
 
-   # using rgb list
-   material([1.0, 1.0, 1.0])
-   cube(3.0)
+   translateX(5)
+   material(0.9)
+   sphere(2.0, style="solid")
+~~~
 
-   # using a variable
-   my_material = [1.0, 1.0, 1.0]
+#### set material using rgb values
+
+
+<%= vroom_example_image "core", "material", "set-material-using-rgb-values.png" %>
+
+
+~~~ python
+def display():
+   material(0.0, 1.0, 1.0)
+   sphere(3.0, style="solid")
+~~~
+
+#### set material using rgb list
+
+
+<%= vroom_example_image "core", "material", "set-material-using-rgb-list.png" %>
+
+
+~~~ python
+def display():
+   material([1.0, 1.0, 0.0])
+   sphere(3.0, style="solid")
+~~~
+
+#### set material using variable
+
+
+<%= vroom_example_image "core", "material", "set-material-using-variable.png" %>
+
+
+~~~ python
+def display():
+   my_material = [1.0, 0.0, 1.0]
    material(my_material)
-   cube(3.0)
+   sphere(3.0, style="solid")
+~~~
 
+#### set material using alias
+
+
+<%= vroom_example_image "core", "material", "set-material-using-alias.png" %>
+
+
+~~~ python
+def display():
    # using color alias
-   material(white)
-   cube(3.0)
+   material(blue)
+   sphere(3.0, style="solid")
 ~~~
