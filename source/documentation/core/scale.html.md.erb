@@ -3,12 +3,26 @@ layout: documentation
 title:  scale
 module: core
 source: transform.py
+tags:   [ transform ]
 related:
    - [ rotate,    core/rotate.html ]
    - [ translate, core/tronslate.html ]
 ---
 
 Scale the coordinate system.
+
+The [transform](/documentation/tags/transform.html) methods are used to position
+objects in your application. You can scale an object along a particular axis (x,y,z)
+or uniformly in all directions. See the [examples](#examples) section below
+for usage.
+ 
+{:.alert.alert-info}
+Be sure to wrap `scale` calls with `pushMatrix()` and `popMatrix()` to restore 
+the environment to its original state. Otherwise, all subsequent rendering calls
+will be scaled.
+
+See the [coordinate system tutorial](/tutorials/coordinate-transformations.html)
+for more information.
 
 ### syntax
 

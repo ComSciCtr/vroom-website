@@ -1,0 +1,108 @@
+---
+layout: documentation
+title:  sphereDetail
+module: rendering
+source: sphere.py
+tags:   [ rendering, geometry ]
+related:
+   - [ sphere, rendering/sphere.html ]
+---
+
+Set the level of detail when rendering spheres.
+
+
+### syntax
+
+~~~ python
+sphereDetail(ures, vres)
+sphereDetail(res)
+~~~
+
+### parameters
+
+ures | number of "slices" in sphere
+vres | number of "stacks" in sphere
+res  | number of "slices" and "stacks" in sphere
+
+
+### examples
+
+#### change number of slices
+
+
+<%= vroom_example_image "rendering", "sphere-detail", "change-number-of-slices.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+
+   translateX(-3)
+   sphere(2.0)
+
+   translateX(6)
+   color(green)
+   sphereDetail(24, 12)
+   sphere(2.0)
+~~~
+
+#### change number of stacks
+
+
+<%= vroom_example_image "rendering", "sphere-detail", "change-number-of-stacks.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+
+   translateX(-3)
+   sphere(2.0)
+
+   translateX(6)
+   color(green)
+   sphereDetail(12, 24)
+   sphere(2.0)
+~~~
+
+#### change both slices and stacks
+
+
+<%= vroom_example_image "rendering", "sphere-detail", "change-both-slices-and-stacks.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+
+   translateX(-3)
+   sphere(2.0)
+
+   translateX(6)
+   color(green)
+   sphereDetail(24)
+   sphere(2.0)
+~~~
+
+
+#### resolution comparison
+
+
+<%= vroom_example_image "rendering", "sphere-detail", "resolution-comparison.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   resolution = 6
+   translateX(-8)
+
+   for i in range(9):
+      sphereDetail(resolution)
+      sphere(1.0)
+      resolution += 2
+      translateX(2)
+~~~
+
+
+

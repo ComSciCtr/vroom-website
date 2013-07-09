@@ -3,13 +3,25 @@ layout: documentation
 title:  cube
 module: rendering
 source: cube.py
-tags:   [ geometry ]
+tags:   [ rendering, geometry ]
 related:
    - [ sphere, rendering/sphere.html ]
    - [ cylinder, rendering/cylinder.html ]
 ---
 
-Render a cube.
+Render a cube. 
+
+This function draws a cube with its corner at the origin (0,0,0) and its
+sides extending in the positive x, y, and z-directions. The center of the
+cube is at the point `(sx/2, sy/2, sz/2)`.
+
+{:alert.alert-info}
+To draw a cube centered at the origin use the batch rendering method
+[at](/documentation/rendering/batch-mode.html#at).
+
+Calling `cube` with a single value will render a cube with all sides of
+equal length. A more generic box shape can be rendered by specifying all
+three sides independently.
 
 ### syntax
 
@@ -74,3 +86,21 @@ def display():
     cube(4.0, texture=Global.texture)
 ~~~
 
+
+#### draw a cube centered at the origin
+
+
+<%= vroom_example_image "rendering", "cube", "draw-a-cube-centered-at-the-origin.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   size = 4.0
+
+   color(white)
+   cube(size)
+
+   color(green)
+   draw(cube, size).at([-size/2, -size/2, -size/2])
+~~~

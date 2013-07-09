@@ -3,10 +3,28 @@ layout: documentation
 title:  random_vertex_generator
 module: utils
 source: generators.py
+tags:   [ utils, generators ]
+related:
+   - [ random_vertex, /documentation/utils/random-vertex.html ]
 
 ---
 
 Random vertex generator.
+
+The [random_vertex](/documentation/utils/random-vertex.html) function is useful
+for generating a single random color.  However, if you are dealing with a large
+number of objects the `random_vertex_generator` function can be used to
+generate a large number of random vertices at once.
+
+By default points will be generated in the range [-1.0, 1.0]. This can be changed
+by specifying a `start` and/or `stop` value. Note that points are generated in a
+cube.
+
+{:.alert .alert-error}
+Since this function returns a generator object you will need to wrap it in a
+`list()` or call the `next()` method on the generator. See the
+[examples](#examples) section below for usage.
+
 
 ### syntax
 

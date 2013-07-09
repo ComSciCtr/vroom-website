@@ -3,6 +3,60 @@ layout: documentation
 title:  Texture
 module: rendering
 source: texture.py
+tags:   [ rendering ]
 
 ---
+
+The `Texture` object is used for texture mapping objects.
+
+### initialization
+
+~~~ python
+Texture.from_file(filename)
+~~~
+
+### methods
+
+~~~ python
+bind()
+~~~
+
+~~~ python
+unbind()
+~~~
+
+
+### examples
+
+#### using the bind methods
+
+
+<%= vroom_example_image "rendering", "texture", "using-the-bind-methods.png" %>
+
+
+~~~ python
+def gl_init():
+   Global.texture = Texture.from_file('data/crate.png')
+
+def display():
+   lighting(False)
+   Global.texture.bind()
+   cube(4.0, style="solid")
+   Global.texture.unbind()
+~~~
+
+#### passing texture as argument
+
+
+<%= vroom_example_image "rendering", "texture", "passing-texture-as-argument.png" %>
+
+
+~~~ python
+def gl_init():
+   Global.texture = Texture.from_file('data/globe.png')
+
+def display():
+   lighting(False)
+   sphere(4.0, texture=Global.texture)
+~~~
 

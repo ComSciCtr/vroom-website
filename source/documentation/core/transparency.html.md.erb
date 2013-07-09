@@ -3,11 +3,24 @@ layout: documentation
 title:  transparency
 module: core
 source: lighting.py
+tags:   [ color, rendering ]
 related: 
-   - [ color, core/material.html ]
+   - [ color, core/color.html ]
 ---
 
-Enable or disable transparency. Transparency is disabled by default.
+Enable or disable transparency. **Transparency is disabled by default.**
+
+{:.alert.alert-error}
+Be sure to render all non-transparent objects first. Otherwise the color
+blending will be off. 
+
+Generally, when rendering with transparency your display function will be
+structured like this:
+
+ * disable transparency, enable lighting, set material properties, etc.
+ * draw all opaque objects
+ * enable transparency, turn off lighting, set color poperties
+ * draw all transparent objects
 
 ### syntax
 

@@ -3,11 +3,19 @@ layout: documentation
 title:  lighting
 module: core
 source: lighting.py
+tags:   [ color, rendering ]
 related:
    - [ material, core/material.html ]
 ---
 
-Enable or disable lighting. By default lighting is disabled.
+Enable or disable lighting. **Lighting is enabled by default.**
+
+{:.alert.alert-info}
+When lighting is enabled you need to use the [material](/documentation/core/material.html)
+function. The [color](/documentation/core/color.html) function should be used when 
+lighting is disabled. Additionally, the various [geometry](/documentation/tags/geometry.html)
+functions should be called with the optional `style="solid"` argument. See the [examples](#examples)
+section below for examples of rendering with and without lighting.
 
 ### syntax
 

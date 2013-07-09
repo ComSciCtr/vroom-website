@@ -3,6 +3,7 @@ layout: documentation
 title:  rotate
 module: core
 source: transform.py
+tags:   [ transform ]
 related:
    - [ translate, core/tronslate.html ]
    - [ scale,     core/scale.html ]
@@ -10,13 +11,25 @@ related:
 
 Rotate the coordinate system.
 
+The [transform](/documentation/tags/transform.html) methods are used to position
+objects in your application. You can rotate about a particular axis (x,y,z) or
+about an arbitrary axis of rotation. See the [examples](#examples) section below
+for usage.
+
+{:.alert.alert-info}
+Be sure to wrap `rotate` calls with `pushMatrix()` and `popMatrix()` to restore
+the environment to its original state. Otherwise, all subsequent rendering calls
+will be rotated.
+
+See the [coordinate system tutorial](/tutorials/coordinate-transformations.html)
+for more information.
+
 ### syntax
 
 ~~~ python
 rotateX(rx)
 rotateY(ry)
 rotateZ(rz)
-
 rotate(angle, axis)
 ~~~
 

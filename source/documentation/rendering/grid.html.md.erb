@@ -3,6 +3,90 @@ layout: documentation
 title:  grid
 module: rendering
 source: grid.py
+tags:   [ rendering ]
 
 ---
+
+Draw a grid.
+
+This function draws a grid with its corner and the origin (0,0,0) extending
+in the positive x and y-directions. The center of the grid is at the point
+`(x/2, y/2)`.
+
+{:alert.alert-info}
+To draw a grid centered at the origin use the batch rendering method
+[at](/documentation/rendering/batch-mode.html#at).
+
+### syntax
+
+~~~ python
+grid(x, y, nx, ny)
+~~~
+
+### parameters
+
+x  | length of the grid in the x-direction
+y  | length of the grid in the y-direction
+nx | number of cells in the x-direction
+ny | number of cells in the y-direction
+
+
+### examples
+
+#### draw a grid in the x-y plane
+
+
+<%= vroom_example_image "rendering", "grid", "draw-a-grid-in-the-x-y-plane.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   grid(20, 20, 10, 10)
+~~~
+
+
+#### draw a grid in the x-z plane
+
+
+<%= vroom_example_image "rendering", "grid", "draw-a-grid-in-the-x-z-plane.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   pushMatrix()
+   rotateX(90)
+   grid(20, 20, 10, 10)
+   popMatrix()
+~~~
+
+#### draw a grid in the y-z plane
+
+
+<%= vroom_example_image "rendering", "grid", "draw-a-grid-in-the-y-z-plane.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   pushMatrix()
+   rotateY(90)
+   grid(20, 20, 10, 10)
+   popMatrix()
+~~~
+
+
+#### draw a grid centered at the origin
+
+
+<%= vroom_example_image "rendering", "grid", "draw-a-grid-centered-at-the-origin.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   size=20
+   draw(grid, size, size, 10, 10).at([-size/2, -size/2, 0])
+~~~
 

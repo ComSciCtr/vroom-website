@@ -3,8 +3,59 @@ layout: documentation
 title:  cylinder
 module: rendering
 source: cylinder.py
-tags:   [ geometry ]
+tags:   [ rendering, geometry ]
 related:
    - [ cube, rendering/cube.html ]
    - [ sphere, rendering/sphere.html ]
 ---
+
+Render a cylinder.
+
+This function draws a cylinder with the center of its base at the origin 
+(0,0,0) and its height in the positive y-direction. 
+
+# syntax
+
+~~~ python
+cylinder(radius, height)
+~~~
+
+### parameters
+
+radius | radius of the base of the cylinder
+height | height of the cylinder 
+
+### optional arguments
+
+style    | rendering style: `"wireframe"` (default) or `"solid"`
+texture  | [Texture](/documentation/rendering/texture.html) object(s)
+
+### examples
+
+#### draw a wireframe cylinder
+
+
+<%= vroom_example_image "rendering", "cylinder", "draw-a-wireframe-cylinder.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   color(1.0, 1.0, 1.0)
+   cylinder(1.0, 4.0)
+~~~
+
+
+#### draw a solid cylinder
+
+
+<%= vroom_example_image "rendering", "cylinder", "draw-a-solid-cylinder.png" %>
+
+
+~~~ python
+def display():
+   lighting(True)
+   material(1.0, 1.0, 1.0)
+   cylinder(1.0, 4.0, style='solid')
+~~~
+

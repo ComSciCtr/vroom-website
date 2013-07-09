@@ -8,17 +8,76 @@ related:
    - [ random_color, utils/random-color.html ]
 ---
 
-Random color generator. The `random_color()` function is useful for generating
-a single random color. However, if you a dealing with a large number of objects the
-`random_color_generator` function can be used to generate a large number of
-random color values at once.
+Random color generator. 
 
-By default points will be generated in the range [-1.0, 1.0]. This can be changed
-by specifying a `start` and/or `stop` value. Note that points are generated in a
-cube.
+The [random_color](/documentation/utils/random-color.html) function is useful
+for generating a single random color.  However, if you a dealing with a large
+number of objects the `random_color_generator` function can be used to generate
+a large number of random color values at once.
+
+By default rgb color values will be generated. Greyscale values can be returned
+by specifying the `type` value.
 
 {:.alert .alert-error}
 Since this function returns a generator object you will need to wrap it in a
 `list()` or call the `next()` method on the generator. See the
 [examples](#examples) section below for usage.
+
+
+### syntax
+
+~~~ python
+random_color_generator(n)
+~~~
+
+### parameters
+
+n | number of color values
+
+### optional arguments
+
+type | type of color value: `"rgb"` (default) or `"greyscale"`
+
+
+### examples
+
+
+#### point cloud with random color values
+
+
+<%= vroom_example_image "utils", "random-color-generator", "point-cloud-with-random-color-values.png" %>
+
+
+~~~ python
+def init():
+   vertices = list(random_vertex_generator(500, -5, 5))
+   colors = list(random_color_generator(500))
+   Global.points = PointCloud(vertices, colors)
+
+def display():
+   lighting(False)
+   Global.points.pointSize(2.0)
+   Global.points.draw()
+~~~
+
+#### cubes with random greyscale values
+
+
+<%= vroom_example_image "utils", "random-color-generator", "cubes-with-random-greyscale-values.png" %>
+
+
+~~~ python
+def init():
+   Global.points = list(random_vertex_generator(50, -10, 10))
+   Global.colors = list(random_color_generator(50, type="greyscale"))
+
+def display():
+   lighting(False)
+   for col, pos in zip(Global.colors, Global.points):
+      color(col)
+      pushMatrix()
+      translate(pos)
+      cube(0.5)
+      popMatrix()
+~~~
 

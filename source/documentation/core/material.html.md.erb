@@ -3,14 +3,23 @@ layout: documentation
 title:  material
 module: core
 source: lighting.py
+tags:   [ color, rendering ]
 related:
    - [ color, core/color.html ]
    - [ lighting, core/lighting.html ]
 ---
 
-Set the material properties when rendering. After calling `material()` all
-subsequent rendering will use the specified material value. Material values
-must be in the range 0.0 to 1.0.
+Set the material properties when rendering. 
+
+After calling `material()` all subsequent rendering will use the specified
+material value. Material values must be in the range 0.0 to 1.0. There a number
+of different ways this function can be called. See the [examples](#examples)
+section below for usage.
+
+{:.alert.alert-info}
+Be sure to enable [lighting](/documentation/core/lighting.html) when using
+the `material`. Additionally, the various [geometry](/documentation/tags/geometry.html)
+functions should be called with the optional `style="solid"` argument.
 
 ### syntax
 

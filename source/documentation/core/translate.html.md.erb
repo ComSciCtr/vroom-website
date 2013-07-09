@@ -3,12 +3,26 @@ layout: documentation
 title:  translate
 module: core
 source: transform.py
+tags :  [ transform ]
 related:
-   - [ rotate,    core/rotate.html ]
-   - [ scale,     core/scale.html ]
+   - [ rotate, core/rotate.html ]
+   - [ scale,  core/scale.html ]
 ---
 
 Translate the coordinate system.
+
+The [transform](/documentation/tags/transform.html) methods are used to position
+objects in your application. You can translate along a particular axis (x,y,z) or
+along an arbitrary axis. See the [examples](#examples) section below
+for usage.
+
+{:.alert.alert-info}
+Be sure to wrap `translate` calls with `pushMatrix()` and `popMatrix()` to restore
+the environment to its original state. Otherwise, all subsequent rendering calls
+will be translated as well.
+
+See the [coordinate system tutorial](/tutorials/coordinate-transformations.html)
+for more information.
 
 ### syntax
 
@@ -16,7 +30,6 @@ Translate the coordinate system.
 translateX(tx)
 translateY(ty)
 translateZ(tz)
-
 translate(dist, dir)
 ~~~
 

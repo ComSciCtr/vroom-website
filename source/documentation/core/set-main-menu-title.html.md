@@ -9,7 +9,7 @@ related:
 ---
 
 Change what is displayed at the top of the main application menu.  By default
-the main menu title is set to *vroom*. Use this function to change it.
+the main menu title is set to *vroom*. 
 
 {:.alert.alert-info}
 The main menu can only be modified in the application's `init()` function.

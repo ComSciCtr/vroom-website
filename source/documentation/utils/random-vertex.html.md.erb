@@ -3,6 +3,45 @@ layout: documentation
 title:  random_vertex
 module: utils
 source: generators.py
+tags:   [ utils, generators ]
+related:
+   - [ random_vertex_generator, /documentation/utils/random-vertex-generator.html ]
 
 ---
+
+Generate a random vertex.
+
+### syntax
+
+~~~ python
+random_vertex()
+~~~
+
+### optional arguments
+
+start | minimum for vertex data
+stop  | maximum for vertex data
+
+### return
+
+Random vertex with x,y,z values in the range ['start', 'stop']
+
+
+### examples
+
+#### randomly placed cubes
+
+
+<%= vroom_example_image "utils", "random-vertex", "randomly-placed-cubes.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   for i in range(10):
+      pushMatrix()
+      translate(random_vertex(-5, 5))
+      cube(3.0)
+      popMatrix()
+~~~
 

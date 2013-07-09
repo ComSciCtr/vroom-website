@@ -3,5 +3,93 @@ layout: documentation
 title:  PointCloud
 module: rendering
 source: point_cloud.py
+tags:   [ rendering, object ]
 
 ---
+
+The `PointCloud` object is used to store and display point data.
+
+### initialization
+
+~~~ python
+PointCloud(vertex_data, color_data)
+~~~
+
+### methods
+
+#### sprite
+
+~~~ python
+sprite(filename)
+~~~
+
+#### pointSize
+
+~~~ python
+pointSize(size)
+~~~
+
+#### draw
+
+~~~ python
+draw()
+~~~
+
+
+### examples
+
+#### basic point cloud 
+
+
+<%= vroom_example_image "rendering", "point-cloud", "basic-point-cloud.png" %>
+
+
+~~~ python
+def init():
+   vertices = list(random_vertex_generator(1000, -10, 10))
+   Global.points = PointCloud(vertices)
+
+def display():
+   lighting(False)
+   color(0.0, 1.0, 1.0)
+   Global.points.draw()
+~~~
+
+
+#### point cloud with sprites
+
+
+<%= vroom_example_image "rendering", "point-cloud", "point-cloud-with-sprites.png" %>
+
+
+~~~ python
+def init():
+   vertices = list(random_vertex_generator(1000, -10, 10))
+   Global.points = PointCloud(vertices)
+
+def gl_init():
+   Global.points.sprite('data/particle.bmp')
+
+def display():
+   lighting(False)
+   Global.points.draw()
+~~~
+
+#### point cloud with color data
+
+
+<%= vroom_example_image "rendering", "point-cloud", "point-cloud-with-color-data.png" %>
+
+
+~~~ python
+def init():
+   vertices = list(random_vertex_generator(1000, -10, 10))
+   colors   = list(random_color_generator(1000))
+   Global.points = PointCloud(vertices, colors)
+
+def display():
+   lighting(False)
+   Global.points.pointSize(3.0)
+   Global.points.draw()
+~~~
+
