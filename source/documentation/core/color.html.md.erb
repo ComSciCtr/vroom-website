@@ -30,29 +30,79 @@ a    | alpha (transparency) value
 
 ### examples
 
-#### draw a wireframe white cube
+#### set color with grey-scale value
+
+
+<%= vroom_example_image "core", "color", "set-color-with-grey-scale-value.png" %>
+
 
 ~~~ python
-def draw():
-   # using grey-scale value
-   color(1.0)
+def display():
+   lighting(False)
+
+   translateX(-5)
+   color(0.1)
    cube(3.0)
 
-   # using rgb value
-   color(1.0, 1.0, 1.0)
+   translateX(5)
+   color(0.5)
    cube(3.0)
 
-   # using rgb list
-   color([1.0, 1.0, 1.0])
+   translateX(5)
+   color(0.9)
    cube(3.0)
+~~~
 
-   # using a variable
-   my_color = [1.0, 1.0, 1.0]
+#### set color using rgb values
+
+
+<%= vroom_example_image "core", "color", "set-color-using-rgb-values.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   color(0.0, 1.0, 1.0)
+   cube(3.0)
+~~~
+
+#### set color using rgb list
+
+
+<%= vroom_example_image "core", "color", "set-color-using-rgb-list.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   color([1.0, 1.0, 0.0])
+   cube(3.0)
+~~~
+
+#### set color using variable
+
+
+<%= vroom_example_image "core", "color", "set-color-using-variable.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   my_color = [1.0, 0.0, 1.0]
    color(my_color)
    cube(3.0)
+~~~
 
-   # using color alias
-   color(white)
+#### set color using alias
+
+
+<%= vroom_example_image "core", "color", "set-color-using-alias.png" %>
+
+
+~~~ python
+def display():
+   lighting(False)
+   color(blue)
    cube(3.0)
 ~~~
 
