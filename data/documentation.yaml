@@ -15,9 +15,10 @@ modules:
      docs:
         - "cube.html"
         - "sphere.html"
+        - "sphere-detail.html"
         - "cylinder.html"
         - "grid.html"
-        - "point_cloud.html"
+        - "point-cloud.html"
         - "texture.html"
    - name: "utils"
      docs:
