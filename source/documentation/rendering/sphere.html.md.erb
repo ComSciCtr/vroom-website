@@ -53,3 +53,19 @@ def display():
    material(1.0, 1.0, 1.0)
    sphere(3.0, style='solid')
 ~~~
+
+#### draw a texture-mapped sphere
+
+
+<%= vroom_example_image "rendering", "sphere", "draw-a-texture-mapped-sphere.png" %>
+
+
+~~~ python
+def gl_init():
+   Global.texture = Texture.from_file('data/globe.png')   
+
+def display():
+   lighting(True)
+   material(white)
+   sphere(3.0, texture=Global.texture)
+~~~
