@@ -5,12 +5,13 @@
       %i.icon-github 
       #{data.page.module}/#{data.page.source}
 
-  - if current_page.data.tags
-    %h4.inline.label.label-info tags:
-    %ul.inline
-      - current_page.data.tags.each do |tag|
-        %li
-          = link_to tag, "/documentation/tags/#{tag}.html"
+  .taglist
+    - if current_page.data.tags
+      %h4.inline.label.label-info tags:
+      %ul.inline
+        - current_page.data.tags.each do |tag|
+          %li
+            = link_to tag, "/documentation/tags/#{tag}.html"
 
 
 - content_for :post_scripts do
