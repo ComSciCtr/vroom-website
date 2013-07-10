@@ -1,0 +1,70 @@
+---
+layout: documentation
+title:  text
+module: core
+source: typography.py
+tags:   [ text ]
+related:
+   - [ text,     core/text.html ]
+   - [ textFont, core/text-font.html ]
+   - [ textSize, core/text-size.html ]
+---
+
+Render text.
+
+### syntax
+
+~~~ python
+text(data, x, y, z)
+text(data, [x, y, z])
+~~~
+
+### parameters
+
+data | string to be displayed
+x    | x-position of text location
+y    | y-position of text location
+z    | z-position of text location
+
+### examples
+
+#### basic text rendering
+
+
+<%= vroom_example_image "core", "text", "basic-text-rendering.png" %>
+
+
+~~~ python
+def init():
+   textFont('data/fonts/DroidSans.ttf', 24)
+
+def display():
+   text("upper left",   -4, 0,  4)
+   text("upper right",   4, 0,  4)
+   text("lower right",   4, 0, -4)
+   text("lower left",   -4, 0, -4)
+~~~
+
+
+#### random text placement
+
+
+<%= vroom_example_image "core", "text", "random-text-placement.png" %>
+
+
+~~~ python
+def vertex_string(vert):
+   return '({:.2f}, {:.2f}, {:.2f})'.format(*vert)
+
+def init():
+   textFont('data/fonts/DroidSans.ttf', 10)
+
+   Global.points = list(random_vertex_generator(50, -5, 5))
+   Global.labels = map(vertex_string, Global.points)
+
+def display():
+   for pos, label in zip(Global.points, Global.labels):
+      text(label, pos)
+~~~
+
+

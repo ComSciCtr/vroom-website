@@ -8,6 +8,9 @@ modules:
         - "translate.html"
         - "rotate.html"
         - "scale.html"
+        - "text.html"
+        - "text-font.html"
+        - "text-size.html"
         - "add-main-menu-item.html"
         - "set-main-menu-title.html"
         

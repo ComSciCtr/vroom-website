@@ -1,0 +1,66 @@
+---
+layout: documentation
+title:  textFont
+module: core
+source: typography.py
+tags:   [ text ]
+related:
+   - [ text,     core/text.html ]
+   - [ textSize, core/text-size.html ]
+---
+
+Set the font used when rendering text.
+
+### syntax
+
+~~~ python
+setFont(filename)
+~~~
+
+### parameters
+
+filename | path to font file
+
+### additional arguments
+
+size | font size (default=10)
+
+### examples
+
+#### set font type
+
+
+<%= vroom_example_image "core", "text-font", "set-font-type.png" %>
+
+
+~~~ python
+def display():
+   textFont('data/fonts/DroidSans.ttf')
+   text("Droid Sans", 0, 0, 5)
+
+   textFont('data/fonts/times.ttf')
+   text("Times", 0, 0, 0)
+
+   textFont('data/fonts/webdings.ttf')
+   text("Webdings", 0, 0, -5)
+~~~
+
+
+#### set font type and size
+
+
+<%= vroom_example_image "core", "text-font", "set-font-type-and-size.png" %>
+
+
+~~~ python
+def display():
+   textFont('data/fonts/DroidSans.ttf', 32)
+   text("Droid Sans", 0, 0, 5)
+
+   textFont('data/fonts/times.ttf', 32)
+   text("Times", 0, 0, 0)
+
+   textFont('data/fonts/webdings.ttf', 32)
+   text("Webdings", 0, 0, -5)
+~~~
+

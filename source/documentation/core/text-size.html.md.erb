@@ -1,0 +1,58 @@
+---
+layout: documentation
+title:  textSize
+module: core
+source: typography.py
+tags:   [ text ]
+related:
+   - [ text,     core/text.html ]
+   - [ textFont, core/text-font.html ]
+---
+
+Set the font size used when rendering text.
+
+### syntax
+
+~~~ python
+textSize(size)
+~~~
+
+### parameters
+
+size | font size
+
+### examples
+
+#### setting the font size
+
+
+<%= vroom_example_image "core", "text-size", "setting-the-font-size.png" %>
+
+
+~~~ python
+def init():
+   textFont('data/fonts/DroidSans.ttf')
+
+def display():
+   size = 12
+
+   textSize(size)
+   text('font-size={}'.format(size), 0, 0, 5)
+   size += 2
+   
+   textSize(size)
+   text('font-size={}'.format(size), 0, 0, 3)
+   size += 2
+   
+   textSize(size)
+   text('font-size={}'.format(size), 0, 0, 0)
+   size += 2
+   
+   textSize(size)
+   text('font-size={}'.format(size), 0, 0, -3)
+   size += 2
+   
+   textSize(size)
+   text('font-size={}'.format(size), 0, 0, -5)
+   size += 2
+~~~
