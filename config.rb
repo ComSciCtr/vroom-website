@@ -16,6 +16,7 @@ set :images_dir, 'assets/img'
 #set :layouts_dir,  '../layouts'
 #set :partials_dir, '../partials'
 
+
 ready do
    taglist = Hash.new
 
@@ -49,13 +50,24 @@ configure :build do
   # activate :cache_buster
 
   # Use relative URLs
-  # activate :relative_assets
+  #activate :relative_assets
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
   # require "middleman-smusher"
   # activate :smusher
 
+  set :http_prefix, "/vroomdocs"
+
   # Or use a different image path
-  # set :http_path, "/Content/images/"
+  set :http_path, "/vroomdocs/assets/img"
+
+
+end
+
+activate :deploy do |deploy|
+   deploy.method = :rsync
+   deploy.user = "jvanaals"
+   deploy.host = "iviz.csc.ucdavis.edu"
+   deploy.path = "/var/www/vroomdocs"
 end
