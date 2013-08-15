@@ -24,11 +24,11 @@
         %h2= data.site.subtitle
 
         %p
-          %a.btn.btn-large.btn-info{:href=>"/download.html"} get started
+          %a.btn.btn-large.btn-info{:href=>"download.html"} get started
 
         %ul.inline
           %li= link_to "tutorials", "#"
-          %li= link_to "api reference", "#"
+          %li= link_to "api reference", "/documentation/index.html"
           %li= link_to "source code", "#"
 
   .row-fluid#brief
@@ -36,21 +36,41 @@
       :markdown
         **vroom** is designed to make immersive 3D visualization easier by
         reducing the amount of time (and effort) required to develop VR
-        applications.  **vroom** is built using the [Vrui](#) library and
-        python. It is being developed at the *University of California, Davis*.
+        applications. It is primarily intended as a visualization tool for
+        scientists and researchers, but hopefully it is useful to anyone
+        interested in creating and interacting in 3D.
+        
+        It is being developed at the *University of California, Davis*.
 
   .row-fluid
     .span3.offset2
       %h3 simple syntax
-      %p= lorem.paragraph
+      :markdown
+        **vroom** provides a clean, simple interface that is easy to learn, but
+        also very flexible, allowing you to start off small and scale your
+        application as needed. **vroom's** minimalist approach means that you won't
+        waste time and energy. Want to quickly visualize some data? Write a
+        simple app that does just that. No need to deploy a massive framework
+        for simple tasks.
 
     .span3
       %h3 live coding
-      %p= lorem.paragraph
+      :markdown
+        Sometimes you don't know what direction a project is going to go when
+        you start out. This is very common in scientific fields where the data
+        being analyzed or the method of analysis is unique. **vroom's** live-coding
+        environment provides instant feedback allowing you to experiment as
+        you are building your application. It is also just a very nice way to
+        interact with your code.
 
     .span3
       %h3 high level
-      %p= lorem.paragraph
+      :markdown
+        Sometimes you have data that you just want to look at without spending
+        a whole afternoon writing code. **vroom's** high-level approach to 
+        visualization lets you get a lot done in a short amount of time.
+        This means you get to spend more time interacting with your data and 
+        less time trying to get it to the screen.
     
   #examples
     = partial "partials/frontpage_examples"
