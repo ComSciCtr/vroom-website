@@ -13,7 +13,7 @@
           def init():
             Global.points = []
 
-          def draw():
+          def display():
             lighting(False)
             color(green)
             draw(sphere, 3.0).for_each(Global.points)
@@ -37,7 +37,7 @@
           def init():
             Global.texture = Texture.from_file('crate.png')
 
-          def draw():
+          def display():
             material(white)
             cube(3.0, texture=Global.texture)
           ~~~
@@ -60,7 +60,7 @@
           def frame():
             Global.radius = fabs(sin(elapsedTime()))
 
-          def draw():
+          def display():
             sphere(Global.radius)
           ~~~
 
