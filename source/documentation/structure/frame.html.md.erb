@@ -1,0 +1,71 @@
+---
+layout: documentation
+title:  frame
+module: core
+source: application.py
+tags:   [ structure ]
+related:
+   - [ display, structure/display.html ]
+
+---
+
+Internal animation function. If you want your program to vary with time, use
+the `frame()` function to update variables. This function is called
+approximately 24 times a second.
+
+<%= partial "partials/internal_function_warning" %>
+
+### usage
+
+~~~ python
+def frame():
+   # animation (simulation) code goes here...
+~~~
+
+### example
+
+The following program demonstrates usage of the `frame()` to animate a 
+bouncing ball. Each time the function is called it updates the global
+`height` variable. The `display()` function simply draws a sphere at 
+whatever the current height is.
+
+~~~python
+from math import sqrt
+
+def init():
+   Global.height   = 15.0  # height of the ball
+   Global.velocity = 0.0   # ball starts with no velocity
+   Global.gravity  = 0.05  # strength of gravity (try changing this
+                           # value and see what happens).
+
+   # In this simple example we will ignore damping effects.
+   Global.max_velocity = sqrt(2.0 * Global.gravity * Global.height)
+
+   Global.radius = 1.0 # radius of the ball
+
+   sphereDetail(20) # increase the resolution of the sphere
+
+def frame():
+   # Each time frame() is called we increase (or decrease) the velocity
+   # due to gravity and then update the position of the ball.
+   Global.velocity -= Global.gravity
+   Global.height += Global.velocity
+
+   # The ball "bounces" when it falls through the floor (when its height
+   # becomes negative).
+   if Global.height < 0.0:
+      Global.height = 0.0
+      Global.velocity = Global.max_velocity
+
+def display():
+   # Draw the ball. Note that we do not update any variables in the display() 
+   # function. All changes related to the animation (simulation) are done in 
+   # frame().
+   material(green)
+   draw(sphere, Global.radius, style='solid').at(0, 0, Global.height)
+
+   # Draw a grid for the floor.
+   lighting(False)
+   color(0.3)
+   draw(grid, 20, 20, 10, 10).at(-10, -10, -Global.radius)
+~~~

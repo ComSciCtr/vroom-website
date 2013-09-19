@@ -1,4 +1,14 @@
 modules:
+   - name: "structure"
+     docs:
+        - "display.html"
+        - "frame.html"
+        - "init.html"
+        - "gl-init.html"
+        - "button-press.html"
+        - "button-release.html"
+        - "motion.html"
+
    - name: "core"
      docs:
         - "color.html"
@@ -23,6 +33,7 @@ modules:
         - "grid.html"
         - "point-cloud.html"
         - "texture.html"
+
    - name: "utils"
      docs:
         - "get-resource.html"

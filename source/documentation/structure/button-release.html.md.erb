@@ -1,0 +1,67 @@
+---
+layout: documentation
+title:  button_release 
+module: core
+source: application.py
+tags:   [ structure ]
+related:
+   - [ button_press, structure/button-press.html ]
+   - [ motion, structure/motion.html ]
+
+---
+
+Internal interaction function. Called whenever a button is released. 
+
+<%= partial "partials/internal_function_warning" %>
+
+### usage
+
+~~~python
+def button_release(position, button):
+   # interaction code goes here...
+~~~
+
+### paramaters
+
+position | (x, y, z) position of the cursor location
+button   | button ID value
+
+
+### example
+
+In the following example we use the `button_release()` function to build on the
+`button_press` [example](/documentation/structure/button-press.html#example).  Instead of
+drawing uniform spheres we will allow the user to set the size of each sphere
+independently. The user presses the button down to set the origin. When the
+button is released the radius is calculated and the sphere is drawn.
+
+
+~~~python
+def init():
+   # We will use the following array to store the center point and the
+   # radius of each sphere.
+   Global.points = [] # start with an empty array
+
+def display():
+   # Draw all the spheres.
+   lighting(False)
+   color(green)
+
+   for center, radius in Global.points:
+      draw(sphere, radius).at(center)
+
+def button_press(pos, button):
+   # Use the current cursor postion for the center of the sphere. We use
+   # a Global variable here so we can access it later in the button_release
+   # function.
+
+   Global.center = pos
+
+def button_release(pos, button):
+   # Compute the radius of the sphere using the center point stored when the
+   # button was pressed and position when it was released.
+   radius = distance(pos, Global.center)   
+
+   # Add the center point and radius to our arary
+   Global.points.append([Global.center, radius])
+~~~

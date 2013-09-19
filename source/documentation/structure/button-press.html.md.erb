@@ -1,0 +1,52 @@
+---
+layout: documentation
+title:  button_press  
+module: core
+source: application.py
+tags:   [ structure ]
+related:
+   - [ button_release, structure/button-release.html ]
+   - [ motion, structure/motion.html ]
+
+---
+
+Internal interaction function. Called whenever a button is pressed. 
+
+<%= partial "partials/internal_function_warning" %>
+
+### usage
+
+~~~python
+def button_press(position, button):
+   # interaction code goes here...
+~~~
+
+### paramaters
+
+position | (x, y, z) position of the cursor location
+button   | button ID value
+
+
+### example
+
+In the following example we use the `button_press()` function to add 
+points whenever the user presses the button.
+
+
+~~~python
+def init():
+   Global.points = [] # start with an empty array
+
+def display():
+   # Draw a sphere at each point the user pressed the button
+   material(0, 1, 1)
+   draw(sphere, 1.0, style='solid').for_each(Global.points)
+
+def button_press(pos, button):
+   # Add a point at the current cursor position. In this example
+   # we do not need to use the button ID value, however it will be
+   # passed to the function by vroom so it must be in the function
+   # definition.
+
+   Global.points.append(pos)
+~~~
