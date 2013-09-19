@@ -1,5 +1,5 @@
 # Use the Kramdown markdown parser
-set :markdown_engine, :kramdown
+#set :markdown_engine, :kramdown
 
 # Enable syntax highlighting
 activate :syntax
