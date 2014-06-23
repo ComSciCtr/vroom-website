@@ -1,15 +1,15 @@
-nodejs:
-  pkg.installed
+middleman-depends:
+   pkg:
+      - installed
+      - names:
+         - build-essential
+         - ruby-dev
+         - nodejs
 
 middleman:
   gem.installed:
-    - ruby: 1.9.3
     - require:
-      - rvm: ruby-1.9.3
-      - pkg: nodejs
+       - pkg: middleman-depends
 
 bundler:
-  gem.installed:
-    - ruby: 1.9.3
-    - require:
-      - rvm: ruby-1.9.3
+  gem.installed
