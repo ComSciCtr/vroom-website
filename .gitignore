@@ -23,5 +23,9 @@
 # Ignore auto generated images
 /source/assets/img/examples
 
+# Ignore auto generated code and images
+/tools/examples
+/tools/img
+
 # Ignore vagrant directory
 /.vagrant
