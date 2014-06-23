@@ -18,6 +18,7 @@
 
 # Ignore vim swap files
 *.swp
+*.swo
 
 # Ignore auto generated images
 /source/assets/img/examples
