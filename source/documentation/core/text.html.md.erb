@@ -39,6 +39,8 @@ def init():
    textFont('data/fonts/DroidSans.ttf', 24)
 
 def display():
+   lighting(False)
+
    text("upper left",   -4, 0,  4)
    text("upper right",   4, 0,  4)
    text("lower right",   4, 0, -4)
@@ -63,6 +65,8 @@ def init():
    Global.labels = map(vertex_string, Global.points)
 
 def display():
+   lighting(False)
+
    for pos, label in zip(Global.points, Global.labels):
       text(label, pos)
 ~~~
