@@ -1,2 +1,2 @@
 site:
-   root: amplifyadvocacy.net
+   root: ''

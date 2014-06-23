@@ -3,10 +3,9 @@ screen:
 
 init-app:
   cmd.run:
-    - name: bash -lc 'rvm 1.9.3 do bundle install'
+    - name: bundle install
     - cwd: /vagrant/{{ pillar['site']['root'] }}/
     - require:
-      - rvm: ruby-1.9.3
       - gem: middleman
       - gem: bundler
 
@@ -15,5 +14,5 @@ start-app:
     - name: bash -lc 'screen -dmS newscreen nohup middleman --force-polling'
     - cwd: /vagrant/{{ pillar['site']['root'] }}/
     - require:
-      - cmd.run: init-app
+      - cmd: init-app
       - pkg: screen
