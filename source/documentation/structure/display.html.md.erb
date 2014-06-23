@@ -1,0 +1,63 @@
+---
+layout: documentation
+title:  display 
+module: core
+source: application.py
+tags:   [ structure ]
+related:
+   - [ frame, structure/frame.html ]
+
+---
+
+Internal rendering function. Anything you want to draw goes in this function.
+It is automatically called by **vroom** whenever the scene needs to be updated.
+
+<%= partial "partials/internal_function_warning" %>
+
+### usage
+
+~~~ python
+def display():
+   # rendering code goes here...
+~~~
+
+### examples
+
+
+#### drawing a single sphere
+
+~~~python
+def display():
+   sphere(3.0)
+~~~
+
+
+#### drawing multiple sheres
+
+~~~python
+def display():
+   color(blue)
+   draw(sphere, 3.0).at(-3, 0, 0)
+
+   color(green)
+   draw(sphere, 3.0).at(0, 0, 0)
+
+   color(blue)
+   draw(sphere, 3.0).at(3, 0, 0)
+~~~
+
+
+#### calling a user defined function
+
+~~~python
+def draw_something():
+   # amazing drawing code goes here...
+
+def draw_something_else():
+   # more amazing drawing code goes here...
+
+def display():
+   draw_something()
+   draw_something_else()
+~~~
+

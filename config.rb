@@ -1,5 +1,5 @@
 # Use the Kramdown markdown parser
-set :markdown_engine, :kramdown
+#set :markdown_engine, :kramdown
 
 # Enable syntax highlighting
 activate :syntax
@@ -57,17 +57,16 @@ configure :build do
   # require "middleman-smusher"
   # activate :smusher
 
-  set :http_prefix, "/vroomdocs"
+  set :http_prefix, "/vroom"
 
   # Or use a different image path
-  set :http_path, "/vroomdocs/assets/img"
+  set :http_path, "/vroom/assets/img"
 
 
 end
 
 activate :deploy do |deploy|
-   deploy.method = :rsync
-   deploy.user = "jvanaals"
-   deploy.host = "iviz.csc.ucdavis.edu"
-   deploy.path = "/var/www/vroomdocs"
+   deploy.method = :git
+   deploy.remote = "comscictr-vroom"
+   deploy.branch = "gh-pages"
 end
